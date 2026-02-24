@@ -18,7 +18,7 @@ const ProductViewer = () => {
       <div className="controls">
         <p className="info text-center">
           Macbook Pro {scale === 0.08 ? `16"` : `14"`} in{" "}
-          {color === "#2e2c2e" ? "Silver" : "Space Gray"} color.
+          {color === "#2e2c2e" ? "Space Gray" : "Silver"} color.
         </p>
 
         <div className="flex-center gap-5 mt-5">
@@ -44,7 +44,7 @@ const ProductViewer = () => {
               onClick={() => setScale(0.06)}
               className={clsx(
                 scale === 0.06
-                  ? "bg-white text-block"
+                  ? "bg-white text-black"
                   : "bg-transparent text-white",
               )}
             >
@@ -54,7 +54,7 @@ const ProductViewer = () => {
               onClick={() => setScale(0.08)}
               className={clsx(
                 scale === 0.08
-                  ? "bg-white text-block"
+                  ? "bg-white text-black"
                   : "bg-transparent text-white",
               )}
             >
