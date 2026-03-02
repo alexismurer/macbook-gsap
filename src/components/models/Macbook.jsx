@@ -23,10 +23,11 @@ export default function MacbookModel(props) {
   const screen = useVideoTexture(texture);
 
   useEffect(() => {
+    const newColor = new Color(color);
     scene.traverse((child) => {
       if (child.isMesh) {
         if (!noChangeParts.includes(child.name)) {
-          child.material.color = new Color(color);
+          child.material.color = newColor;
         }
       }
     });

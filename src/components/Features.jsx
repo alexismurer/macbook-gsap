@@ -17,14 +17,14 @@ const ModelScroll = () => {
 
   // Pre-load all feature videos during component mount
   useEffect(() => {
-    featureSequence.forEach((feature) => {
+    featureSequence.slice(0, 2).forEach((feature) => {
       const v = document.createElement("video");
 
       Object.assign(v, {
         src: feature.videoPath,
         muted: true,
         playsInline: true,
-        preload: "auto",
+        preload: "metadata",
         crossOrigin: "anonymous",
       });
 
@@ -63,21 +63,15 @@ const ModelScroll = () => {
     }
 
     // Content & Texture Sync
-    timeline
-      .call(() => setTexture("/videos/feature-1.mp4"))
-      .to(".box1", { opacity: 1, y: 0, delay: 1 })
-
-      .call(() => setTexture("/videos/feature-2.mp4"))
-      .to(".box2", { opacity: 1, y: 0 })
-
-      .call(() => setTexture("/videos/feature-3.mp4"))
-      .to(".box3", { opacity: 1, y: 0 })
-
-      .call(() => setTexture("/videos/feature-4.mp4"))
-      .to(".box4", { opacity: 1, y: 0 })
-
-      .call(() => setTexture("/videos/feature-5.mp4"))
-      .to(".box5", { opacity: 1, y: 0 });
+    featureSequence.forEach((feature, index) => {
+      timeline
+        .call(() => setTexture(feature.videoPath))
+        .to(`.box${index + 1}`, {
+          opacity: 1,
+          y: 0,
+          delay: index === 0 ? 1 : 0,
+        });
+    });
   }, []);
 
   return (
