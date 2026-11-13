@@ -4,7 +4,7 @@
 
 Scroll-driven storytelling with a live 3D MacBook you can recolor and resize, video masked into type, and a pinned features section where the laptop turns to show each screen.
 
-![Hero](docs/screenshots/hero.jpg)
+![Hero](docs/gifs/hero.gif)
 
 ## Highlights
 
@@ -14,13 +14,9 @@ Scroll-driven storytelling with a live 3D MacBook you can recolor and resize, vi
 - **Studio lighting**: a custom light rig for a clean, product-shot look
 - **Responsive**: layouts and animations adapt to smaller screens
 
-| 3D product viewer | Video mask |
+| 3D product viewer | Scroll-driven story |
 | --- | --- |
-| ![Product viewer](docs/screenshots/product-viewer.jpg) | ![M4 showcase](docs/screenshots/showcase.jpg) |
-
-| Scroll-driven features | Highlights |
-| --- | --- |
-| ![Features](docs/screenshots/features.jpg) | ![Highlights](docs/screenshots/highlights.jpg) |
+| ![Recoloring and resizing the 3D MacBook](docs/gifs/viewer.gif) | ![Scrolling through the M4, performance and features sections](docs/gifs/scroll.gif) |
 
 ## Tech stack
 
