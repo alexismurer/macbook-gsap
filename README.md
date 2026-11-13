@@ -1,173 +1,47 @@
-# 💻 MacBook GSAP Experience
+# MacBook GSAP Experience
 
-An Apple-inspired MacBook product website built to experiment with **GSAP animations**, **Three.js 3D rendering**, and smooth product-style storytelling.
+**An Apple-style MacBook Pro product page, built to explore GSAP and Three.js in React.**
 
-This project recreates the premium interactive feel of modern Apple landing pages — combining scroll-based animations, 3D models, lighting setups, and responsive layouts.
+Scroll-driven storytelling with a live 3D MacBook you can recolor and resize, video masked into type, and a pinned features section where the laptop turns to show each screen.
 
----
+![Hero](docs/screenshots/hero.jpg)
 
-## ✨ Overview
+## Highlights
 
-This project focuses on:
+- **Interactive 3D viewer**: switch between the 14" and 16" models and two finishes, with smooth GSAP transitions between them
+- **Scroll-driven 3D**: a pinned section rotates the MacBook and swaps its screen video as each feature scrolls into view
+- **Video in type**: gameplay footage plays through the Apple logo and "M4" lettering
+- **Studio lighting**: a custom light rig for a clean, product-shot look
+- **Responsive**: layouts and animations adapt to smaller screens
 
-- 🎞 GSAP timeline orchestration
-- 🧊 Real-time 3D rendering with Three.js
-- 🎥 Camera & model transitions
-- 💡 Studio-style lighting setup
-- 📱 Responsive behavior across devices
+| 3D product viewer | Video mask |
+| --- | --- |
+| ![Product viewer](docs/screenshots/product-viewer.jpg) | ![M4 showcase](docs/screenshots/showcase.jpg) |
 
----
+| Scroll-driven features | Highlights |
+| --- | --- |
+| ![Features](docs/screenshots/features.jpg) | ![Highlights](docs/screenshots/highlights.jpg) |
 
-## 🚀 Tech Stack
+## Tech stack
 
-### Core
+React 19 · Vite · Tailwind CSS v4 · GSAP (ScrollTrigger, `@gsap/react`) · Three.js · React Three Fiber · Drei · Zustand
 
-- ⚛️ React 19
-- ⚡ Vite
-- 🎨 TailwindCSS v4
+The selected model's color, scale and screen texture live in a small Zustand store (`src/store`), shared by the 3D viewer and the scroll animations.
 
-### Animation
-
-- 🎞 GSAP
-- @gsap/react
-
-### 3D
-
-- 🧊 Three.js
-- @react-three/fiber
-- @react-three/drei
-
-### State & Utilities
-
-- 🗂 Zustand
-- 📱 react-responsive
-- 🧩 clsx
-
----
-
-## 📂 Project Structure
-
-```bash
-src/
-│
-├── components/
-│   ├── models/
-│   │   ├── Macbook-14.jsx
-│   │   ├── Macbook-16.jsx
-│   │   └── Macbook.jsx
-│   │
-│   ├── three/
-│   │   ├── ModelSwitcher.jsx
-│   │   └── StudioLights.jsx
-│   │
-│   ├── Features.jsx
-│   ├── Footer.jsx
-│   ├── Hero.jsx
-│   ├── Highlights.jsx
-│   ├── NavBar.jsx
-│   ├── Performance.jsx
-│   ├── ProductViewer.jsx
-│   └── Showcase.jsx
-│
-├── constants/
-│   └── index.js
-│
-├── store/
-│   └── index.js
-│
-├── App.jsx
-├── main.jsx
-└── index.css
-```
-
----
-
-## 🧠 Architecture Highlights
-
-### 🎥 ProductViewer
-
-Handles the 3D canvas rendering and connects:
-
-- Model selection
-- Camera transitions
-- GSAP-driven animations
-
-### 🧊 models/
-
-Contains separate MacBook 14" and 16" 3D model components.
-
-### 💡 StudioLights
-
-Creates a clean, Apple-like lighting setup for a premium product feel.
-
-### 🔄 ModelSwitcher
-
-Controls switching between models with smooth transitions.
-
-### 🗂 Zustand Store
-
-Centralized state management for selected model's color, scale and textures
-
----
-
-## 🛠 Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/alexismurer/macbook-gsap.git
-cd macbook-gsap
-```
-
-Install dependencies:
+## Getting started
 
 ```bash
 npm install
-```
-
-Run the development server:
-
-```bash
 npm run dev
 ```
 
----
-
-## 🏗 Production Build
-
-```bash
-npm run build
-```
-
-Preview the production build:
-
-```bash
-npm run preview
-```
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the dev server |
+| `npm run build` | Production build |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | Lint the project |
 
 ---
 
-## 🎬 Animation Approach
-
-This project uses:
-
-- GSAP timelines for section-based animations
-- Scroll-triggered transitions
-- Coordinated DOM + WebGL animations
-- Smooth camera and model rotations
-- Performance-aware animation batching
-
----
-
-## 🎯 Key Learnings
-
-- Integrating GSAP cleanly inside React components
-- Synchronizing UI and Three.js animations
-- Managing animation state properly
-- Optimizing 3D performance in a React app
-
----
-
-## 📄 License
-
-This project was built for learning and portfolio purposes.
+Built for learning and portfolio purposes.
